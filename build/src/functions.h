@@ -18,6 +18,8 @@
 #include <time.h>
 #include <fstream>
 #include <vector>
+#include <windows.h>
+#include <sstream>
 
 class Functions{
 	
@@ -52,7 +54,7 @@ public:
 	 * 
 	 * Note -> The preserved values are used to preserve the BIN to allow for legacy routing
 	 */
-	std::string tokenizeData(int binLength, std::string panValue);
+	std::string tokenizeData(int binLength, std::string panValue, int version);
 
 	/*
 	 * Tokenize Data
@@ -76,6 +78,13 @@ public:
 	 */
 	std::map<std::string, std::string> loadData(std::string databaseName);
 
+	/*
+	 * Load Database in Memory
+	 *
+	 * Loads lookup.db
+	 */
+	std::map<std::string, std::string> loadLookupData();
+
 
 	/*
 	 * Add the pair into database
@@ -83,7 +92,7 @@ public:
 	 *	token (string)
 	 *  sData (string) -> The PAN
 	 */
-	int addToDB(std::string token, std::string sdata);
+	int addToDB(std::string token, std::string sdata, int version);
 
 	/*
 	 * Dump comntents of the Database
