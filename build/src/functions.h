@@ -100,6 +100,8 @@ public:
 	 */
 	void dumpDBContents();
 
+	void exportDBTar();
+
 };
 
 #endif

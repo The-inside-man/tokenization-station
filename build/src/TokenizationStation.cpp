@@ -41,6 +41,13 @@ int main(int argc, char *argv[]){
 			}else{
 				cout << "Please use format tokenize token" << endl;
 			}
+		}else if(cmd.compare("export") == 0){
+			if(argc == 2){
+				cout << "Exporting..." << endl;
+				func.exportDBTar();
+			}else{
+				cout << "Please use format tokenize export" << endl;
+			}
 		}
 	}else{
 

@@ -188,3 +188,8 @@ void Functions::dumpDBContents(){
 	fout.close();
 	fout2.close();
 }
+
+void Functions::exportDBTar(){
+	system("export.sh");
+	std::cout << "Exported to location /tokenization-station/exportFiles.tar" << std::endl;
+}
